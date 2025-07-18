@@ -35,7 +35,7 @@ const Graph = ForceGraph3D()(document.getElementById('graph'))
     return new THREE.Mesh(geo, new THREE.MeshLambertMaterial({ color: (r << 16) | (g << 8) | b }));
   })
   .enableNodeDrag(false)
-  .linkWidth(1)
+  .linkWidth(2)
   .linkColor(() => 'rgba(255,255,255,1)')
   .onEngineTick(() => {
     const scene = Graph.scene();
@@ -182,9 +182,9 @@ async function pollNewBlocks() {
   }
   console.log("✅ Precarga completada");
 
-  // Iniciar polling cada 5s
+  // Iniciar polling cada 2s
   await pollNewBlocks();
-  setInterval(pollNewBlocks, 5000);
+  setInterval(pollNewBlocks, 2000);
 })();
 
 
